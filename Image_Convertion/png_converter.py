@@ -6,11 +6,11 @@ import pydicom
 from PIL import Image
 import os
 
+# CONVERTER IMAGENS EM FORMATO DICOM PARA PNG
+file_dicom = "Image_Convertion/file_path.dcm"
 
-# CONVERTER IMAGENS EM FORMATO DICOM PARA PNG/JPG
-file_dicom = "dicom_files\IM-0001-0006.dcm"
 file_name = os.path.basename(file_dicom)
-converted_image_name = (f"new_images_png/{file_name[:-4]}.png")
+converted_image_name = (f"{file_name[:-4]}.png")
 image = pydicom.dcmread(file_dicom)
 
 #pegar apenas ass arrays dos pixels
