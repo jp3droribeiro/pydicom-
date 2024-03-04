@@ -5,9 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider
 import os
 
-
 #PATH TO THE FOLDER CONTAINING DICOM FILES (REPLACE WITH YOUR FOLDER PATH)
-dcm_folder_path = 'dicom_files'
+dcm_folder_path = 'Viewer\dicom_files'
 
 #LIST TO STORE DICOM OBJECTS (DATASET LIST)
 ds_list = []
@@ -28,14 +27,12 @@ def update_graph(val):
     ax.set_title("image DICOM - Index {}".format(index))
     fig.canvas.draw_idle()
 
-
 # CONFIGURE THE GRAPHICAL INTERFACE FOR DISPLAYING IMAGES
 fig, ax = plt.subplots()
 plt.subplots_adjust(bottom=0.25)
 first_image = ds_list[0].pixel_array
 img_plot = ax.imshow(first_image, cmap='gray')
 ax.set_title("DICOM Image - Index 0")
-
 
 # ADD SLIDER TO NAVIGATE BETWEEN IMAGES
 ax_slider = plt.axes([0.25, 0.1, 0.65, 0.03], facecolor='lightgoldenrodyellow')
